@@ -1,0 +1,57 @@
+﻿<Page x:Class="Katalog.ListeSayfasi"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Katalog"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Konut - Liste">
+
+    <Grid Margin="10,0,10,10">
+
+        <Grid.Resources>
+            <!--Bu bilgiler dosyadan okunacak. Ama nasıl?-->
+            <XmlDataProvider x:Key="KonutDataSource" XPath="Konutlar">
+                <x:XData>
+                    <Konutlar xmlns="">
+                        <Konut konutTipi="Villa" alan="500" fiyat="900" bahceAlani="200" garaj="var" tipi="dublex" kat="-" balkon="-" asansor="-"/>
+                        <Konut konutTipi="Daire" alan="120" fiyat="350" bahceAlani="-" garaj="-" tipi="-" kat="4/6" balkon="var" asansor="var"/>
+                        <Konut konutTipi="Villa" alan="800" fiyat="870" bahceAlani="250" garaj="yok" tipi="triplex" kat="-" balkon="-" asansor="-"/>
+                        <Konut konutTipi="Daire" alan="700" fiyat="740" bahceAlani="-" garaj="-" tipi="-" kat="5/8" balkon="var" asansor="var"/>
+                    </Konutlar>
+                </x:XData>
+            </XmlDataProvider>
+        </Grid.Resources>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition />
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+
+        <Label Grid.Column="0" Style="{StaticResource headerTextStyle}" >
+            Konut Listesi
+        </Label>
+
+
+        <ListView ItemsSource="{Binding Source={StaticResource KonutDataSource}, XPath=Konut}" Name="KonutListView" Grid.Column="0" Grid.Row="2">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Konut Tipi" DisplayMemberBinding="{Binding XPath=@konutTipi}" />
+                    <GridViewColumn Header="Alan" DisplayMemberBinding="{Binding XPath=@alan}" />
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+        <Button Grid.Column="0" Grid.Row="3" Click="Button_Click" Style="{StaticResource buttonStyle}">Detay</Button>
+
+
+    </Grid>
+</Page>
