@@ -1,0 +1,2 @@
+﻿Daire,500,750,4,var,yok
+Villa,800,950,200,var,dublex
