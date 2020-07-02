@@ -29,11 +29,19 @@
         </Label>
 
 
-        <ListView Name="KonutListView" Grid.Column="0" Grid.Row="2" Loaded="KonutListView_Loaded">
+        <ListView Name="KonutListView" Grid.Column="0" Grid.Row="2">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="Konut Tipi" DisplayMemberBinding="{Binding KonutTipi}" />
                     <GridViewColumn Header="Alan" DisplayMemberBinding="{Binding Alan}" />
+                    <GridViewColumn Header="Favori">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <CheckBox Checked="CheckBoxChanged" Unchecked="CheckBoxChanged" Margin="5, 0" IsChecked="{Binding Favori}"/>
+                                
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
                 </GridView>
             </ListView.View>
         </ListView>

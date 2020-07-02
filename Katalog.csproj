@@ -55,8 +55,14 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="DaireDetay.xaml.cs">
+      <DependentUpon>DaireDetay.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Villa.cs" />
-    <Page Include="DetaySayfasi.xaml">
+    <Compile Include="VillaDetay.xaml.cs">
+      <DependentUpon>VillaDetay.xaml</DependentUpon>
+    </Compile>
+    <Page Include="DaireDetay.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -73,9 +79,6 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Daire.cs" />
-    <Compile Include="DetaySayfasi.xaml.cs">
-      <DependentUpon>DetaySayfasi.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Konut.cs" />
     <Compile Include="ListeSayfasi.xaml.cs">
       <DependentUpon>ListeSayfasi.xaml</DependentUpon>
@@ -84,6 +87,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="VillaDetay.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">

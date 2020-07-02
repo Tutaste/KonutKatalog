@@ -16,19 +16,19 @@ using System.Windows.Shapes;
 namespace Katalog
 {
     /// <summary>
-    /// Interaction logic for DetaySayfasi.xaml
+    /// Interaction logic for VillaDetay.xaml
     /// </summary>
-    public partial class DetaySayfasi : Page
+    public partial class VillaDetay : Page
     {
-        public DetaySayfasi()
+        public VillaDetay()
         {
             InitializeComponent();
         }
 
-        public DetaySayfasi(object data) : this()
+        public VillaDetay(object data) : this()
         {
             this.DataContext = data;
-            
+
         }
     }
 }

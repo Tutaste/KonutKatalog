@@ -1,2 +1,2 @@
-﻿Daire,500,750,4,var,yok
-Villa,800,950,200,var,dublex
+﻿Daire,500,750,4,var,yok,True
+Villa,800,950,200,var,dublex,False

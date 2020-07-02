@@ -41,6 +41,7 @@ namespace Katalog
                         yeniVilla.BahceAln = degerler[3];
                         yeniVilla.Garaj = degerler[4];
                         yeniVilla.Tip = degerler[5];
+                        yeniVilla.Favori = bool.Parse(degerler[6]);
                         konutlar.Add(yeniVilla);
                         break;
 
@@ -51,6 +52,7 @@ namespace Katalog
                         yeniDaire.Kat = degerler[3];
                         yeniDaire.Balkon = degerler[4];
                         yeniDaire.Asansor = degerler[5];
+                        yeniDaire.Favori = bool.Parse(degerler[6]);
                         konutlar.Add(yeniDaire);
                         break;
                 }

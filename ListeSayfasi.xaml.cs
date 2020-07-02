@@ -20,20 +20,13 @@ namespace Katalog
     /// </summary>
     public partial class ListeSayfasi : Page
     {
-        List<Konut> konutlar;
-        public ListeSayfasi(List<Konut> k)
+
+        public ListeSayfasi()
         {
             InitializeComponent();
-            konutlar = k;
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            DetaySayfasi detaySayfasi = new DetaySayfasi(this.KonutListView.SelectedItem);
-            this.NavigationService.Navigate(detaySayfasi);
-        }
-
-        private void KonutListView_Loaded(object sender, RoutedEventArgs e)
+        public ListeSayfasi(List<Konut> konutlar) : this()
         {
             this.KonutListView.Items.Clear();
             foreach (var konut in konutlar)
@@ -42,5 +35,30 @@ namespace Katalog
 
             }
         }
+
+
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            if (this.KonutListView.SelectedItem.GetType().Name == "Villa")
+            {
+                VillaDetay villaDetay = new VillaDetay(this.KonutListView.SelectedItem);
+                this.NavigationService.Navigate(villaDetay);
+            }
+            else
+            {
+                DaireDetay daireDetay = new DaireDetay(this.KonutListView.SelectedItem);
+                this.NavigationService.Navigate(daireDetay);
+            }
+
+        }
+
+        private void CheckBoxChanged(object sender, RoutedEventArgs e)
+        {
+            Konut knt = (Konut)this.KonutListView.SelectedItem;
+            //MessageBox.Show(knt.Favori.ToString());
+            
+        }
+
     }
 }

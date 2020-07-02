@@ -43,7 +43,7 @@
             <Setter Property="HorizontalAlignment" Value="Left" />
         </Style>
 
-        <!-- Button style -->
+        <!-- Button style-->
         <Style x:Key="buttonStyle" TargetType="{x:Type Button}">
             <Setter Property="Width" Value="125" />
             <Setter Property="Height" Value="25" />
