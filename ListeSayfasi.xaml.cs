@@ -20,15 +20,27 @@ namespace Katalog
     /// </summary>
     public partial class ListeSayfasi : Page
     {
-        public ListeSayfasi()
+        List<Konut> konutlar;
+        public ListeSayfasi(List<Konut> k)
         {
             InitializeComponent();
+            konutlar = k;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             DetaySayfasi detaySayfasi = new DetaySayfasi(this.KonutListView.SelectedItem);
             this.NavigationService.Navigate(detaySayfasi);
+        }
+
+        private void KonutListView_Loaded(object sender, RoutedEventArgs e)
+        {
+            this.KonutListView.Items.Clear();
+            foreach (var konut in konutlar)
+            {
+                this.KonutListView.Items.Add(konut);
+
+            }
         }
     }
 }

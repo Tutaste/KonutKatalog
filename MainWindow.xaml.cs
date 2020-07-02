@@ -26,7 +26,7 @@ namespace Katalog
             InitializeComponent();
 
             List<Konut> konutlar = new List<Konut>();
-            List<string> satirlar = File.ReadAllLines("C:\\Users\\badem\\source\\repos\\KonutKatalog\\Konutlar.txt").ToList();
+            List<string> satirlar = File.ReadAllLines("..\\..\\Konutlar.txt").ToList();
 
             foreach (var satir in satirlar)
             {
@@ -56,7 +56,10 @@ namespace Katalog
                 }
             }
 
-            //MessageBox.Show(konutlar.Count().ToString());
+            //MessageBox.Show(konutlar[1].ToString());
+
+            ListeSayfasi sayfa = new ListeSayfasi(konutlar);
+            this.NavigationService.Navigate(sayfa);
         }
     }
 }

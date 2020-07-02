@@ -28,6 +28,7 @@ namespace Katalog
         public DetaySayfasi(object data) : this()
         {
             this.DataContext = data;
+            
         }
     }
 }

@@ -6,8 +6,12 @@ using System.Threading.Tasks;
 
 namespace Katalog
 {
-    class Daire : Konut
+    public class Daire : Konut
     {
+        public override string KonutTipi
+        {
+            get { return "Daire"; }
+        }
         public string Kat { get; set; }
         public string Balkon { get; set; }
         public string Asansor { get; set; }

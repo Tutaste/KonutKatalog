@@ -7,8 +7,12 @@ using System.Threading.Tasks;
 
 namespace Katalog
 {
-    abstract class Konut
+    public class Konut
     {
+        public virtual string KonutTipi
+        {
+            get;
+        }
         public string Alan { get; set; }
 
         public string Fiyat { get; set; }
