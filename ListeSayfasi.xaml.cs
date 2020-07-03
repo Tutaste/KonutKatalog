@@ -24,12 +24,10 @@ namespace Katalog
         public ListeSayfasi()
         {
             InitializeComponent();
-        }
 
-        public ListeSayfasi(List<Konut> konutlar) : this()
-        {
             this.KonutListView.Items.Clear();
-            foreach (var konut in konutlar)
+
+            foreach (var konut in ReadWrite.konutlar)
             {
                 this.KonutListView.Items.Add(konut);
 
@@ -37,9 +35,9 @@ namespace Katalog
         }
 
 
-
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            
             if (this.KonutListView.SelectedItem.GetType().Name == "Villa")
             {
                 VillaDetay villaDetay = new VillaDetay(this.KonutListView.SelectedItem);
@@ -55,9 +53,9 @@ namespace Katalog
 
         private void CheckBoxChanged(object sender, RoutedEventArgs e)
         {
-            Konut knt = (Konut)this.KonutListView.SelectedItem;
-            //MessageBox.Show(knt.Favori.ToString());
-            
+            Konut knt = (Konut)((CheckBox)sender).DataContext;
+            ReadWrite.konutlar[knt.SatirNo] = knt;
+            ReadWrite.KonutlarKaydet();
         }
 
     }

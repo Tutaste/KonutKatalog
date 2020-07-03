@@ -58,6 +58,7 @@
     <Compile Include="DaireDetay.xaml.cs">
       <DependentUpon>DaireDetay.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ReadWrite.cs" />
     <Compile Include="Villa.cs" />
     <Compile Include="VillaDetay.xaml.cs">
       <DependentUpon>VillaDetay.xaml</DependentUpon>

@@ -38,7 +38,6 @@
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
                                 <CheckBox Checked="CheckBoxChanged" Unchecked="CheckBoxChanged" Margin="5, 0" IsChecked="{Binding Favori}"/>
-                                
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>

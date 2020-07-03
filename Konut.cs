@@ -18,5 +18,7 @@ namespace Katalog
         public string Fiyat { get; set; }
 
         public bool Favori { get; set; }
+
+        public int SatirNo { get; set; }
     }
 }
